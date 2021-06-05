@@ -121,16 +121,16 @@ public class MainActivity extends AppCompatActivity {
             AsyncTask.execute(new Runnable() {
                 @Override
                 public void run() {
-                    showToast("registering, pls wait...");
+                    showToast("I'm registering with DJI, chill bro...");
 
                     DJISDKManager.getInstance().registerApp(MainActivity.this.getApplicationContext(), new DJISDKManager.SDKManagerCallback() {
                         @Override
                         public void onRegister(DJIError djiError) {
                             if (djiError == DJISDKError.REGISTRATION_SUCCESS) {
-                                showToast("Register Success");
+                                showToast("Registration Success boi");
                                 DJISDKManager.getInstance().startConnectionToProduct();
                             } else {
-                                showToast("Register sdk fails, please check the bundle id and network connection!");
+                                showToast("SDK Registration failed, please check the bundle id and network connection!");
                             }
                             Log.v(TAG, djiError.getDescription());
                         }
